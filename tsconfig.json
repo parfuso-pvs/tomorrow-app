@@ -1,0 +1,12 @@
+{
+  "extends": "@tomorrow/config/typescript/base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@tomorrow/ui": ["./packages/ui/src"],
+      "@tomorrow/database": ["./packages/database/src"],
+      "@tomorrow/utils": ["./packages/utils/src"],
+      "@tomorrow/config": ["./packages/config"]
+    }
+  }
+}
