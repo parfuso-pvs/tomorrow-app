@@ -29,10 +29,10 @@ export function BenefitsSection({ className }: BenefitsSectionProps) {
           transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             Science-Backed Benefits
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Tomorrow leverages cognitive psychology research to transform how your brain processes tasks, 
             reducing mental fatigue while amplifying your natural productivity rhythms.
           </p>
@@ -57,11 +57,11 @@ export function BenefitsSection({ className }: BenefitsSectionProps) {
       </div>
 
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-green-50 opacity-70" />
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/20 to-background" />
         <div className="absolute inset-0">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob" />
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-green-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000" />
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-purple-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000" />
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/10 rounded-full mix-blend-screen dark:mix-blend-multiply filter blur-xl opacity-50 animate-blob" />
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-secondary/10 rounded-full mix-blend-screen dark:mix-blend-multiply filter blur-xl opacity-50 animate-blob animation-delay-2000" />
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-accent/10 rounded-full mix-blend-screen dark:mix-blend-multiply filter blur-xl opacity-50 animate-blob animation-delay-4000" />
         </div>
       </div>
     </section>

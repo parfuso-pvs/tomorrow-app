@@ -36,7 +36,7 @@ export function HeroContent({
       )}
       
       <StaggerItem>
-        <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl lg:text-7xl">
+        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
           <span className="block">{headline}</span>
         </h1>
       </StaggerItem>

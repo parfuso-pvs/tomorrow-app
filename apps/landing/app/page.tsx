@@ -2,6 +2,7 @@
 
 import { Hero, BenefitsSection } from '@tomorrow/ui'
 import { SocialProof } from '@/components/HomePage/SocialProof'
+import { AppPreviewSection } from '@/components/AppPreviewSection'
 import { useState } from 'react'
 
 export default function HomePage() {
@@ -45,11 +46,11 @@ export default function HomePage() {
       <Hero
         headline="Plan tomorrow tonight"
         subheadline="Transform your productivity with science-backed evening planning. Wake up with clear priorities, focused momentum, and zero decision fatigue."
-        badge="Now in Beta"
+        badge="Open Beta - Free Access"
         socialProof={<SocialProof userCount="1,000+" rating={4.9} />}
         showEmailCapture={true}
         emailPlaceholder="Enter your email to get started"
-        emailButtonText="Start Free"
+        emailButtonText="Get Started"
         onEmailSubmit={handleEmailSubmit}
         secondaryAction={{
           label: 'See how it works',
@@ -60,6 +61,10 @@ export default function HomePage() {
       
       <section id="features">
         <BenefitsSection />
+      </section>
+      
+      <section id="demo">
+        <AppPreviewSection />
       </section>
     </main>
   )
