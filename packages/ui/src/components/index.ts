@@ -1,4 +1,5 @@
 export * from './hero'
 export * from './forms'
 export * from './animations'
+export * from './benefits'
 export { Button } from './Button'

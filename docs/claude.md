@@ -1142,3 +1142,4 @@ export function useKeyboardShortcuts() {
 - "Every pixel has a purpose"
 - "Performance without sacrificing experience"
 - "Document everything with audit trails"
+- "Once done testing your work, kill your local development servers"

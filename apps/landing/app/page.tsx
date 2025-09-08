@@ -1,6 +1,6 @@
 'use client'
 
-import { Hero } from '@tomorrow/ui'
+import { Hero, BenefitsSection } from '@tomorrow/ui'
 import { SocialProof } from '@/components/HomePage/SocialProof'
 import { useState } from 'react'
 
@@ -58,12 +58,8 @@ export default function HomePage() {
         emailVariant="inline"
       />
       
-      {/* Placeholder for future sections */}
-      <section id="features" className="min-h-screen flex items-center justify-center bg-gray-50">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold text-gray-900">Science-Backed Benefits</h2>
-          <p className="mt-4 text-gray-600">Coming soon...</p>
-        </div>
+      <section id="features">
+        <BenefitsSection />
       </section>
     </main>
   )
