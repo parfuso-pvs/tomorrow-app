@@ -35,4 +35,12 @@
     background: radial-gradient(ellipse at top, theme('colors.primary.100'), transparent 50%),
                 radial-gradient(ellipse at bottom, theme('colors.secondary.100'), transparent 50%);
   }
+  
+  .animation-delay-2000 {
+    animation-delay: 2000ms;
+  }
+  
+  .animation-delay-4000 {
+    animation-delay: 4000ms;
+  }
 }
