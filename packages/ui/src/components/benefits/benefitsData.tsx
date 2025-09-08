@@ -1,7 +1,7 @@
 import type { Benefit } from './types'
 
 const BrainIcon = () => (
-  <svg className="w-7 h-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <svg className="w-7 h-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
       d="M9.75 3.5C11.5 2 14.5 2 16.25 3.5C18 5 18 8 16.25 9.5L12 14L7.75 9.5C6 8 6 5 7.75 3.5C8.625 2.75 9.75 2.5 10.875 2.5C11 2.5 11.125 2.5 11.25 2.5M12 14V21M9 18H15" />
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
@@ -10,31 +10,31 @@ const BrainIcon = () => (
 )
 
 const BatteryIcon = () => (
-  <svg className="w-7 h-7 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <svg className="w-7 h-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
       d="M10 2H5C3.89543 2 3 2.89543 3 4V20C3 21.1046 3.89543 22 5 22H10M14 2H19C20.1046 2 21 2.89543 21 4V20C21 21.1046 20.1046 22 19 22H14M10 2H14M10 22H14M7 7V17" />
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} 
-      d="M7 7H10M7 12H10M7 17H10M14 7H17M14 12H17M14 17H17" className="text-green-400" />
+      d="M7 7H10M7 12H10M7 17H10M14 7H17M14 12H17M14 17H17" className="text-primary/60" />
   </svg>
 )
 
 const TargetIcon = () => (
-  <svg className="w-7 h-7 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <svg className="w-7 h-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <circle cx="12" cy="12" r="10" strokeWidth={2} />
-    <circle cx="12" cy="12" r="6" strokeWidth={2} className="text-purple-400" />
-    <circle cx="12" cy="12" r="2" strokeWidth={2} className="text-purple-300" />
+    <circle cx="12" cy="12" r="6" strokeWidth={2} className="text-primary/70" />
+    <circle cx="12" cy="12" r="2" strokeWidth={2} className="text-primary/50" />
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
       d="M12 2V6M12 18V22M2 12H6M18 12H22" />
   </svg>
 )
 
 const MemoryIcon = () => (
-  <svg className="w-7 h-7 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <svg className="w-7 h-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <rect x="4" y="4" width="16" height="16" rx="2" strokeWidth={2} />
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
       d="M9 9H9.01M15 9H15.01M9 15H9.01M15 15H15.01M12 12H12.01" />
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} 
-      d="M4 9H2M4 15H2M20 9H22M20 15H22M9 4V2M15 4V2M9 20V22M15 20V22" className="text-orange-400" />
+      d="M4 9H2M4 15H2M20 9H22M20 15H22M9 4V2M15 4V2M9 20V22M15 20V22" className="text-primary/60" />
   </svg>
 )
 

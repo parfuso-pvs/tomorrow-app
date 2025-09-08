@@ -18,9 +18,9 @@ export function BenefitCard({ benefit, className }: BenefitCardProps) {
   return (
     <motion.div
       className={cn(
-        'relative bg-white rounded-2xl shadow-lg transition-all duration-300',
+        'relative bg-card rounded-2xl shadow-lg transition-all duration-300',
         'hover:shadow-xl hover:-translate-y-1',
-        'border border-gray-100',
+        'border border-border',
         className
       )}
       onMouseEnter={() => setIsHovered(true)}
@@ -30,14 +30,14 @@ export function BenefitCard({ benefit, className }: BenefitCardProps) {
     >
       <div className="p-6 h-full flex flex-col">
         <div className="mb-4">
-          <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-green-500 p-0.5">
-            <div className="w-full h-full rounded-xl bg-white flex items-center justify-center">
+          <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-secondary p-0.5">
+            <div className="w-full h-full rounded-xl bg-card flex items-center justify-center">
               {benefit.icon}
             </div>
           </div>
         </div>
 
-        <h3 className="text-xl font-bold text-gray-900 mb-2">
+        <h3 className="text-xl font-bold text-foreground mb-2">
           {benefit.title}
         </h3>
 
@@ -46,20 +46,20 @@ export function BenefitCard({ benefit, className }: BenefitCardProps) {
             value={benefit.statistic.value}
             suffix={benefit.statistic.suffix}
             className="text-3xl font-bold"
-            colorClassName="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-600"
+            colorClassName="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary"
           />
-          <p className="text-sm text-gray-600 mt-1">
+          <p className="text-sm text-muted-foreground mt-1">
             {benefit.statistic.label}
           </p>
         </div>
 
-        <p className="text-gray-600 flex-grow mb-4">
+        <p className="text-muted-foreground flex-grow mb-4">
           {benefit.description}
         </p>
 
         <div className="mt-auto">
           <PortalTooltip citation={benefit.citation}>
-            <button className="inline-flex items-center gap-1.5 text-xs text-gray-500 hover:text-blue-600 cursor-pointer transition-all duration-200 group">
+            <button className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-primary cursor-pointer transition-all duration-200 group">
               <svg 
                 className="w-3.5 h-3.5 group-hover:scale-110 transition-transform" 
                 fill="none" 
@@ -79,7 +79,7 @@ export function BenefitCard({ benefit, className }: BenefitCardProps) {
         </div>
 
         <motion.div
-          className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-green-500/5 pointer-events-none"
+          className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 pointer-events-none rounded-2xl"
           initial={{ opacity: 0 }}
           animate={{ opacity: isHovered ? 1 : 0 }}
           transition={{ duration: 0.3 }}

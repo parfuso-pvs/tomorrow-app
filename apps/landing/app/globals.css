@@ -4,43 +4,212 @@
 
 @layer base {
   :root {
+    /* Light mode colors - HSL format for better control */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 224 71.4% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+    
+    /* Primary colors */
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    
+    /* Secondary colors */
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    
+    /* Utility colors */
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    
+    /* Form and UI elements */
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    
+    /* Border radius */
+    --radius: 0.5rem;
   }
-
+  
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark mode colors - optimized for OLED screens */
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+    
+    /* Primary colors adjusted for dark mode */
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    
+    /* Secondary colors for dark mode */
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    
+    /* Utility colors for dark mode */
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    
+    /* Form and UI elements for dark mode */
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 217.2 91.2% 59.8%;
+  }
+  
+  * {
+    @apply border-border;
   }
   
   body {
-    @apply bg-white text-gray-900;
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
 
 @layer utilities {
+  /* Text utilities */
   .text-balance {
     text-wrap: balance;
   }
   
+  /* Gradient utilities that respect theme */
   .gradient-text {
-    @apply bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
   }
   
   .gradient-bg {
-    @apply bg-gradient-to-br from-primary-50 via-white to-secondary-50;
+    @apply bg-gradient-to-br from-background via-muted/50 to-background;
   }
   
+  /* Hero gradient with theme awareness */
   .hero-gradient {
-    background: radial-gradient(ellipse at top, theme('colors.primary.100'), transparent 50%),
-                radial-gradient(ellipse at bottom, theme('colors.secondary.100'), transparent 50%);
+    background: radial-gradient(
+        ellipse 80% 80% at 50% -20%,
+        hsl(var(--primary) / 0.3),
+        transparent
+      ),
+      radial-gradient(
+        ellipse 80% 80% at 80% 80%,
+        hsl(var(--secondary) / 0.15),
+        transparent
+      );
   }
   
+  /* Blob animation for background effects */
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
+  
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+  
+  /* Animation delay utilities */
   .animation-delay-2000 {
     animation-delay: 2000ms;
   }
   
   .animation-delay-4000 {
     animation-delay: 4000ms;
+  }
+  
+  /* Focus utilities */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background;
+  }
+  
+  /* Card utilities */
+  .card {
+    @apply rounded-lg border bg-card text-card-foreground shadow-sm;
+  }
+  
+  /* Button base styles */
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-ring disabled:pointer-events-none disabled:opacity-50;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80;
+  }
+  
+  .btn-destructive {
+    @apply bg-destructive text-destructive-foreground hover:bg-destructive/90;
+  }
+  
+  .btn-outline {
+    @apply border border-input bg-background hover:bg-accent hover:text-accent-foreground;
+  }
+  
+  .btn-ghost {
+    @apply hover:bg-accent hover:text-accent-foreground;
+  }
+  
+  .btn-link {
+    @apply text-primary underline-offset-4 hover:underline;
+  }
+}
+
+@layer components {
+  /* Form input styles */
+  .input {
+    @apply flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  
+  /* Label styles */
+  .label {
+    @apply text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70;
+  }
+  
+  /* Separator styles */
+  .separator {
+    @apply shrink-0 bg-border;
+  }
+  
+  /* Badge styles */
+  .badge {
+    @apply inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+  }
+  
+  .badge-default {
+    @apply border-transparent bg-primary text-primary-foreground;
+  }
+  
+  .badge-secondary {
+    @apply border-transparent bg-secondary text-secondary-foreground;
+  }
+  
+  .badge-destructive {
+    @apply border-transparent bg-destructive text-destructive-foreground;
+  }
+  
+  .badge-outline {
+    @apply text-foreground;
   }
 }
